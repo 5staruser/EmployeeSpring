@@ -32,4 +32,8 @@ public class EmployeeService {
         existingEmployee.setName(employee.getName());
         return repository.save(existingEmployee);
     }
+    public String delete(){
+        repository.deleteAll();
+        return "All Employees removed";
+    }
 }

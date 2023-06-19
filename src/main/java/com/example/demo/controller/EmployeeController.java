@@ -4,6 +4,7 @@ import com.example.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+@RequestMapping("api/v1/employee")
 @RestController
 public class EmployeeController {
     @Autowired
@@ -35,5 +36,9 @@ public class EmployeeController {
     @DeleteMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable int id) {
         return service.deleteEmployee(id);
+    }
+    @DeleteMapping("/delete")
+    public String delete(){
+        return service.delete();
     }
 }
